@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | E-commerce product page</title>
+</head>
+
+<body id="mainBody" onload="loadPageHandler()">
+  <section class="navbar-section">
+    <div class="navbar-container">
+      <div class="navbar-left">
+        <div class="hamburgerIcon">
+          <img src="./images/icon-menu.svg" onclick="openMobileMenu()"/>
+        </div>
+        <div class="navbar-logo">
+          <img class="site-logo" src="./images/logo.svg" />
+        </div>
+
+        <div class="navbar-desktopMenu">
+          <ul class="navbar-menu-container">
+            <li class="navbar-menu-item">Collections</li>
+            <li class="navbar-menu-item">Men</li>
+            <li class="navbar-menu-item">Women</li>
+            <li class="navbar-menu-item">About</li>
+            <li class="navbar-menu-item">Contact</li>
+          </ul>
+        </div>
+        <div class="navbar-mobileMenu hiddenSection"> <!--class hiddenSection> -->
+          <ul class="navbar-mobileMenu-container">
+            <div class="navbar-mobileMenu-closeBtn">
+              <img src="./images/icon-close.svg" onclick="closeMobileMenu()" />
+            </div>
+            <li class="navbar-mobileMenu-item">Collections</li>
+            <li class="navbar-mobileMenu-item">Men</li>
+            <li class="navbar-mobileMenu-item">Women</li>
+            <li class="navbar-mobileMenu-item">About</li>
+            <li class="navbar-mobileMenu-item">Contact</li>
+          </ul>
+        </div>
+      </div>
+      <div class="navbar-right">
+        <div class="navbar-userbasket">
+          <img class="navbar-basket-icon" src="./images/icon-cart.svg" onclick="showCartHandler(event)" />
+          <span class="numbersInBasket invisibleSection">0</span>
+        </div>
+        <div class="navbar-userImgWrapper">
+          <img class="navbar-userImg" src="./images/image-avatar.png" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="mainBody-section">
+
+    <section class="gallery-section">
+      <div class="gallery-container">
+        <div class="desktopGallery-container">
+          <img class="main-galleryFoto" src="./images/image-product-1.jpg" onclick="openLightBox()" />
+        </div>
+        <div class="desktopGallery-carousel">
+          <div class="desktopGallery-carousel-item">
+            <img onclick="gallerySelectHandler(event)" src="./images/image-product-1-thumbnail.jpg"
+              class="desktopGallery-carousel-itemImg active" id="product-1" />
+          </div>
+          <div class="desktopGallery-carousel-item">
+            <img onclick="gallerySelectHandler(event)" src="./images/image-product-2-thumbnail.jpg"
+              class="desktopGallery-carousel-itemImg" id="product-2" />
+          </div>
+          <div class="desktopGallery-carousel-item">
+            <img onclick="gallerySelectHandler(event)" src="./images/image-product-3-thumbnail.jpg"
+              class="desktopGallery-carousel-itemImg" id="product-3" />
+          </div>
+          <div class="desktopGallery-carousel-item">
+            <img onclick="gallerySelectHandler(event)" src="./images/image-product-4-thumbnail.jpg"
+              class="desktopGallery-carousel-itemImg" id="product-4" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="data-section">
+      <div class="data-container">
+        <div class="data-topBar">SNEAKER COMPANY</div>
+        <div class="data-title" id="1">Fall Limited Edition Sneakers</div>
+        <div class="data-text">These low-profile sneakers are your perfect casual wear companion. Featuring a
+          durable rubber outer sole, they’ll withstand everything the weather can offer.</div>
+        <div class="data-valueBar">
+          <div class="data-valueBar-new">$125.00</div>
+          <div class="data-valueBar-offPercent">50%</div>
+        </div>
+        <div class="data-valueBar-old">$250.00</div>
+
+        <div class="data-btnBar">
+          <div class="data-addBtn">
+            <img class="addBtn-icon" src="./images/icon-minus.svg" onclick="minusCountNumber()" />
+            <div class="countNumber">1</div>
+            <img class="minusBtn-icon" src="./images/icon-plus.svg" onclick="plusCountNumber()" />
+          </div>
+          <div class="data-addtoCart" onclick="addToCartHandler()">
+            <img class="cart-icon" src="./images/icon-cart.svg" />
+            <div>Add to cart</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+
+  <section class="lightBox-section hiddenSection">
+    <div class="lightBox-container">
+      <div class="lightBox-closeBtn">
+        <img id="close-Light-Btn" src="./images/icon-close-orange.svg" onclick="closeLightBox()" />
+      </div>
+      <div class="lightBoxGallery-container">
+        <img class="controlBtn" src="./images/icon-previous.svg" id="gallery-prevBtn"
+          onclick="lightBoxNextPrevHandler(event)" />
+        <img class="main-lightBox" src="./images/image-product-1.jpg" />
+        <img class="controlBtn" src="./images/icon-next.svg" id="gallery-nextBtn"
+          onclick="lightBoxNextPrevHandler(event)" />
+      </div>
+      <div class="desktopGallery-carousel">
+        <div class="desktopGallery-carousel-item">
+          <img onclick="lightBoxSelectHandler(event)" src="./images/image-product-1-thumbnail.jpg"
+            class="lightBox-carousel-itemImg activated" id="product-1" />
+        </div>
+        <div class="desktopGallery-carousel-item">
+          <img onclick="lightBoxSelectHandler(event)" src="./images/image-product-2-thumbnail.jpg"
+            class="lightBox-carousel-itemImg" id="product-2" />
+        </div>
+        <div class="desktopGallery-carousel-item">
+          <img onclick="lightBoxSelectHandler(event)" src="./images/image-product-3-thumbnail.jpg"
+            class="lightBox-carousel-itemImg" id="product-3" />
+        </div>
+        <div class="desktopGallery-carousel-item">
+          <img onclick="lightBoxSelectHandler(event)" src="./images/image-product-4-thumbnail.jpg"
+            class="lightBox-carousel-itemImg" id="product-4" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="customerCart-section hiddenSection">
+    <div class="customerCart-container">
+      <div class="customerCart-title">Cart</div>
+      <hr />
+      <div class="customerCart-itemsWrapper">
+        <!-- <div class="customerCart-item">
+          <div class="customerCart-item-image">
+            <img class="customerCart-item-img" src="./images/image-product-3-thumbnail.jpg" />
+          </div>
+          <div class="customerCart-item-text">
+            <div class="customerCart-item-name">Fall Limited Edition Sneakers</div>
+            <div class="customerCart-item-price">$125.00 x 3 <span id="totalPrice">$375.00</span></div>
+          </div>
+          <div class="customerCart-item-icon">
+            <img src="./images/icon-delete.svg" />
+          </div>
+        </div> -->
+      </div>
+      <div class="customerCart-checkoutBtn">Checkout</div>
+    </div>
+  </section>
+
+  <script src="./app.js"></script>
+</body>
+
+</html>
