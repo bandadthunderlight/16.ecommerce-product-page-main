@@ -173,6 +173,8 @@ function plusCountNumber() {
     document.querySelector('.countNumber').textContent = Number(document.querySelector('.countNumber').textContent) + 1
 }
 
+//----- Mobile Menu Functions --------
+
 function closeMobileMenu() {
     document.querySelector('.navbar-mobileMenu').classList.add('hiddenSection')
 }
